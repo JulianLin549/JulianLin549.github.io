@@ -6,14 +6,21 @@
     <link rel="stylesheet" type="text/css" href="src/styles.css" />
   </head>
   <body>
-    <canvas id="canvas" width="600" height="700"></canvas>
-    <img id="orange" src="image/ball/orange.png" style="display: none" />
-    <img id="red" src="image/ball/red.png" style="display: none" />
-    <img id="blue" src="image/ball/blue.png" style="display: none" />
-    <img id="green" src="image/ball/green.png" style="display: none" />
-    <img id="grey" src="image/ball/grey.png" style="display: none" />
-    <img id="purple" src="image/ball/purple.png" style="display: none" />
-    <button type="button" id="startBtn">Start</button>
+    <div class="flex">
+      <canvas id="canvas" width="600" height="700"></canvas>
+      <img id="orange" src="image/ball/orange.png" style="display: none" />
+      <img id="red" src="image/ball/red.png" style="display: none" />
+      <img id="blue" src="image/ball/blue.png" style="display: none" />
+      <img id="green" src="image/ball/green.png" style="display: none" />
+      <img id="grey" src="image/ball/grey.png" style="display: none" />
+      <img id="purple" src="image/ball/purple.png" style="display: none" />
+    </div>
+
+    <div id="overlay">
+      <div id="menu">
+        <button type="button" id="startBtn">Start</button>
+      </div>
+    </div>
 
     <audio src="sound/sound.wav" id="sound" ></audio>
     <audio src="sound/Click.wav" id="moveSound" ></audio>

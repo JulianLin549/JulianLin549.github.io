@@ -15,6 +15,7 @@ const green = document.getElementById("green");
 const grey = document.getElementById("grey");
 const purple = document.getElementById("purple");
 const startBtn = document.getElementById("startBtn");
+const overlay = document.getElementById("overlay");
 const scoreSound = document.getElementById("sound");
 const moveSound = document.getElementById("moveSound");
 const completeSound = document.getElementById("completeSound");
@@ -66,7 +67,7 @@ function Ball(x, y) {
 
 function initialize() {
   
-  startBtn.style.display = 'none';
+  overlay.style.display = "none";
   moveCount = 10;
   score = 0;
   //Create Ball Object nested array
