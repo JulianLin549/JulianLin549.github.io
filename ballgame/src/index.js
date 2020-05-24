@@ -97,6 +97,7 @@ function initialize() {
   // start timer
   timer = setInterval(checkBallStatus, 25);
   bgm.volume = 0.4;
+  bgm.currentTime = 2;
   bgm.play();
 }
 
@@ -129,11 +130,12 @@ function checkBallStatus() {
   if (moves.length ===0 && moveCount === 0){
     clearInterval(timer);
     timer = null;
-    //bgm.pause();
-    //bgm.currentTime = 0;
+
     
     setTimeout('gameOver()', 1000);
     audioVolumeOut(bgm);
+    bgm.pause();
+    bgm.currentTime = 2;
   }
 
 }
