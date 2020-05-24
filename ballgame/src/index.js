@@ -96,6 +96,7 @@ function initialize() {
   canvas.onmouseup = myMouseUp;
   // start timer
   timer = setInterval(checkBallStatus, 25);
+  bgm.volume = 0.4;
   bgm.play();
 }
 
@@ -128,9 +129,11 @@ function checkBallStatus() {
   if (moves.length ===0 && moveCount === 0){
     clearInterval(timer);
     timer = null;
-    bgm.pause();
-    bgm.currentTime = 0;
-    setTimeout('gameOver()', 500);
+    //bgm.pause();
+    //bgm.currentTime = 0;
+    
+    setTimeout('gameOver()', 1000);
+    audioVolumeOut(bgm);
   }
 
 }
@@ -142,6 +145,23 @@ function gameOver(){
   ctx.fillText("Score : " + score, 300, 250);
   completeSound.play();
 }
+
+function audioVolumeOut(q){
+  if(q.volume){
+     var InT = 1;
+     var setVolume = 0;  // Target volume level for old song 
+     var speed = 0.1;  // Rate of volume decrease
+     q.volume = InT;
+     var fAudio = setInterval(function(){
+         InT -= speed;
+         q.volume = InT.toFixed(1);
+         if(InT.toFixed(1) <= setVolume){
+            clearInterval(fAudio);
+            //alert('clearInterval fAudio'+ InT.toFixed(1));
+         };
+     },100);
+  };
+};
 
 function setRemoveFlag() {
   //check if vertical has continues three color
@@ -218,6 +238,7 @@ function fall() {
         if(soundFlag){
           scoreSound.pause();
           scoreSound.currentTime = 0;
+          scoreSound.volume = 0.6;
           scoreSound.play();
           soundFlag = false;
         }
@@ -309,6 +330,6 @@ function myMouseUp(e) {
   //Decrease move count
   moveCount--;
   paint();
-
   moveSound.play();
 }
+
