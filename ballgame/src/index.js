@@ -134,8 +134,7 @@ function checkBallStatus() {
     
     setTimeout('gameOver()', 1000);
     audioVolumeOut(bgm);
-    bgm.pause();
-    bgm.currentTime = 2;
+
   }
 
 }
@@ -146,13 +145,15 @@ function gameOver(){
   ctx.font = "bold 20px Helvetica";
   ctx.fillText("Score : " + score, 300, 250);
   completeSound.play();
+  bgm.pause();
+  bgm.currentTime = 2;
 }
 
 function audioVolumeOut(q){
   if(q.volume){
-     var InT = 1;
-     var setVolume = 0;  // Target volume level for old song 
-     var speed = 0.1;  // Rate of volume decrease
+     let InT = 0.4;
+     let setVolume = 0;  // Target volume level for old song 
+     let speed = 0.05;  // Rate of volume decrease
      q.volume = InT;
      var fAudio = setInterval(function(){
          InT -= speed;
