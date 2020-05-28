@@ -1,7 +1,36 @@
+const ctx = canvas.getContext("2d");
+const balls = [];
+let moves = [];
+let mouseDownX = null;
+let mouseDownY = null;
+let moveCount = 0;
+let score = 0;
+let timer;
+let timeCount;
+balls.color = undefined;
+
+const imageList = [orange, red, blue, green, grey, purple];
+
+window.onload = function() {
+  basicBtn.style.display = "block";
+  timeBtn.style.display = "block";
+};
+
+basicBtn.addEventListener("click", function(){
+  initialize();
+});
+
+timeBtn.addEventListener("click", function(){
+  initialize();
+});
+
+tryAgainBtn.addEventListener("click", function(){
+  initialize();
+});
 
 
 function initialize() {
-  timeCount = 5 * 1000 //15sec
+  timeCount = 15 * 1000 //15sec
   overlay.style.display = "none";
   moveCount = 3;
   score = 0;

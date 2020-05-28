@@ -52,11 +52,18 @@ function getRandomNum(n) {
   function gameOver(){
     //ctx.clearRect(0, 0, 600, 700);
     //tryAgainBtn.style.display = "block";
-    ctx.font = "bold 20px Helvetica";
+    //ctx.font = "bold 20px Helvetica";
     
-    ctx.textAlign = "center";
-    ctx.fillText("Your Score : " + score, 300, 250);
-    //overlay.style.display = "block";
+    //ctx.textAlign = "center";
+    //ctx.fillText("Your Score : " + score, 300, 250);
+    overlay.style.display = "block";
+    jsImg.style.display = "none";
+    basicBtn.style.display = "none";
+    timeBtn.style.display = "none";
+    tryAgainBtn.style.display = "block";
+    
+    finalScoreNum.innerText = score;
+    finalScore.style.display = "block";
     completeSound.play();
     bgm.pause();
     bgm.currentTime = 2;
