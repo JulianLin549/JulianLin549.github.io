@@ -17,8 +17,12 @@
     </div>
 
     <div id="overlay">
-      <div id="menu">
-        <button type="button" id="startBtn">Start</button>
+      <div id="menu" >
+
+        <img id="jsImg" class="btn" src="image/transImageBg.png" style="display: block"/>
+        <img id="basicBtn" class="btn" src="image/buttons/basicBtn.png" style="display: none"/>
+        <img id="timeBtn" class="btn" src="image/buttons/timeBtn.png"style="display: none"/>
+        <img id="tryAgainBtn" class="btn" src="image/buttons/tryAgainBtn.png" style="display: none"/>
       </div>
     </div>
 
@@ -26,6 +30,8 @@
     <audio src="sound/Click.wav" id="moveSound" ></audio>
     <audio src="sound/complete.mp3" id="completeSound" ></audio>
     <audio src="sound/BGM.mp3" id="bgm" ></audio>
-    <script src="src/index.js"></script>
-  </body>
+    <script src="src/getElement.js"></script>
+    <script src="src/common.js"></script>
+    <script src="src/basicGame.js"></script>
+   </body>
 </html>

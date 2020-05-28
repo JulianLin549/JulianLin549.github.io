@@ -30,7 +30,7 @@ tryAgainBtn.addEventListener("click", function(){
 
 
 function initialize() {
-  timeCount = 15 * 1000 //15sec
+  
   overlay.style.display = "none";
   moveCount = 3;
   score = 0;
@@ -67,10 +67,6 @@ function initialize() {
 }
 
 function checkBallStatus() {
-  //decrement time count
-  timeCount-=25;
-
- 
   if (moves.length > 0) {
 
     //Decrement gapCount
@@ -96,14 +92,14 @@ function checkBallStatus() {
   paint();
 
   //Gave Over
-  if (moves.length ===0 && timeCount <= 0){
+  if (moves.length ===0 && moveCount === 0){
     clearInterval(timer);
     timer = null;
 
     
     setTimeout('gameOver()', 1000);
     audioVolumeOut(bgm);
-
+  
   }
 
 }
@@ -138,21 +134,8 @@ function paint() {
 
   //Text
   ctx.font = "bold 20px Helvetica";
-  //ctx.textAlign = "center";
-  //Time 
-  let sec = Math.floor(timeCount / 1000);
-  let mSec = timeCount % 1000;
-
-  if(sec < 0 ){
-      sec = '00';
-  }else if(sec < 10 ){
-    sec = '00' + sec;
-  }
-
-  if(mSec < 0){
-      mSec = '00';
-  }
-  ctx.fillText("Time Left : " + sec + ' : ' + mSec, 150, 50);
+  ctx.textAlign = "center";
+  ctx.fillText("Moves Left : " + moveCount, 150, 50);
   ctx.fillText("Score : " + score, 450, 50);
 }
 //current mouse current location

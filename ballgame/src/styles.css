@@ -1,5 +1,5 @@
 #canvas {
-  margin: 80px;
+  margin: 100px auto;
   border: 1px solid lightgray;
 }
 
@@ -18,10 +18,18 @@
 #startBtn {
   
   font-size: 20px;
-  display: inline-block;
   padding: 10px 30px;
   cursor: pointer; /* Add a pointer on hover */
+  margin-top: 20%;
 }
+
+.btn {
+  padding: 10px 30px;
+  cursor: pointer; /* Add a pointer on hover */
+  margin-top: 20%;
+  display: block;
+}
+
 #overlay {
   position: fixed; /* Sit on top of the page content */
   display: block; /* Hidden by default */
@@ -36,13 +44,17 @@
   
 }
 #menu {
-  margin: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 10% auto;
-  width: 500px;
-  height: 600px;
-  
-  background-color: white;
+  margin: 100px auto;
+  width: 600px;
+  height: 700px;
+  background: #ccc1df;
+}
+
+#jsImg{
+  position: absolute;
+  top:210px;
+  margin: 0px auto;
 }
