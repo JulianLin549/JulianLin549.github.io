@@ -176,7 +176,7 @@ function paint() {
     if(sec < 0 ){
         sec = '00';
     }else if(sec < 10 ){
-      sec = '00' + sec;
+      sec = '0' + sec;
     }
 
     if(mSec < 0){
