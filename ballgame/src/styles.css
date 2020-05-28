@@ -63,6 +63,16 @@
   margin:0 auto;
 
 }
+#highestScore {
+  position: absolute;
+  top:410px;
+  margin: 0px auto;
+  font-family:fantasy;
+  font-size: 25px;
+  margin:0 auto;
+
+}
+
 
 #jsImg{
   position: absolute;

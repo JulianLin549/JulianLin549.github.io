@@ -7,7 +7,10 @@ let moveCount = 0;
 let score = 0;
 let timer;
 let timeCount;
+let timeMode = false;
+let highestSoreKeeper = 0;
 balls.color = undefined;
+
 
 const imageList = [orange, red, blue, green, grey, purple];
 
@@ -17,22 +20,36 @@ window.onload = function() {
 };
 
 basicBtn.addEventListener("click", function(){
+  timeMode = false;
   initialize();
 });
 
 timeBtn.addEventListener("click", function(){
+  timeMode = true;
   initialize();
 });
 
 tryAgainBtn.addEventListener("click", function(){
-  initialize();
+  overlay.style.display = "block";
+  jsImg.style.display = "block";
+  basicBtn.style.display = "block";
+  timeBtn.style.display = "block";
+  tryAgainBtn.style.display = "none";
+  finalScore.style.display = "none";    
+  highestScore.style.display = "none";  
+  timeMode = false;
 });
 
 
 function initialize() {
-  timeCount = 15 * 1000 //15sec
   overlay.style.display = "none";
+  
+  if (timeMode){
+    timeCount = 15 * 1000 //15sec
+  }
+  
   moveCount = 3;
+  
   score = 0;
   //Create Ball Object nested array
   for (let x = 0; x < 10; x++) {
@@ -67,11 +84,9 @@ function initialize() {
 }
 
 function checkBallStatus() {
-  //decrement time count
-  timeCount-=25;
-
- 
-  if (moves.length > 0) {
+  
+  
+  if (moves.length >= 0) {
 
     //Decrement gapCount
     for(let i =0; i < moves.length; i++){
@@ -94,17 +109,29 @@ function checkBallStatus() {
   
   }
   paint();
-
-  //Gave Over
-  if (moves.length ===0 && timeCount <= 0){
+  
+  
+  if(timeMode){
+    timeCount-=25;
+    //Gave Over
+    if (moves.length ===0 && timeCount <= 0){
+      clearInterval(timer);
+      timer = null;
+  
+      
+      setTimeout('gameOver()', 500);
+      audioVolumeOut(bgm);
+  
+    }
+  }else if (moves.length ===0 && moveCount <= 0){
     clearInterval(timer);
-    timer = null;
+  timer = null;
 
-    
-    setTimeout('gameOver()', 1000);
-    audioVolumeOut(bgm);
+  
+  setTimeout('gameOver()', 1000);
+  audioVolumeOut(bgm);
 
-  }
+}
 
 }
 
@@ -139,21 +166,36 @@ function paint() {
   //Text
   ctx.font = "bold 20px Helvetica";
   //ctx.textAlign = "center";
-  //Time 
-  let sec = Math.floor(timeCount / 1000);
-  let mSec = timeCount % 1000;
+  
+  if(timeMode){
 
-  if(sec < 0 ){
-      sec = '00';
-  }else if(sec < 10 ){
-    sec = '00' + sec;
-  }
+        //Time 
+    let sec = Math.floor(timeCount / 1000);
+    let mSec = timeCount % 1000;
 
-  if(mSec < 0){
-      mSec = '00';
-  }
-  ctx.fillText("Time Left : " + sec + ' : ' + mSec, 150, 50);
+    if(sec < 0 ){
+        sec = '00';
+    }else if(sec < 10 ){
+      sec = '00' + sec;
+    }
+
+    if(mSec < 0){
+        mSec = '00';
+    }
+    ctx.fillText("Time Left : " + sec + ' : ' + mSec, 100, 50);
+
+  }else{
+    
+    if(moveCount >= 0){
+      ctx.fillText("Moves Left : " + moveCount, 150, 50);
+    }else ctx.fillText("Moves Left : 0" , 150, 50);
+  
+  } 
+
+  
   ctx.fillText("Score : " + score, 450, 50);
+
+ 
 }
 //current mouse current location
 

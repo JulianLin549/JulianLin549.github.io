@@ -14,8 +14,8 @@ function myMouseUp()
 function getRandomNum(n) {
     return Math.floor(Math.random() * n);
   }
-  
-  function Ball(x, y) {
+
+function Ball(x, y) {
     this.x1 = x;
     this.y1 = y;
     this.x2 = x;
@@ -31,22 +31,26 @@ function getRandomNum(n) {
       //Move ball sideway gradually
       return (this.x1 + (this.x2-this.x1)*(this.gapCount) / 25) * 60  ;
     }
-  // the ball is moving. gapCount will gradually reduce from 25 to 0; thus will gradually change getX and getY;
-    this.moveBall = function(x2, y2, color) {
-      this.x2 = x2;
-      this.y2 = y2;
-      this.color = color;
-      this.moving = true;
-      this.gapCount = 25;
-      moves.push(this);
-    };
-  
-    this.update = function(){
-      this.gapCount--;
-      if (this.gapCount <= 0){
-        this.moving = false;
+
+   
+      // the ball is moving. gapCount will gradually reduce from 25 to 0; thus will gradually change getX and getY;
+      this.moveBall = function(x2, y2, color) {
+        this.x2 = x2;
+        this.y2 = y2;
+        this.color = color;
+        this.moving = true;
+        this.gapCount = 25;
+        moves.push(this);
+      };
+      this.update = function(){
+        this.gapCount--;
+        if (this.gapCount <= 0){
+          this.moving = false;
+        }
       }
-    }
+    
+  
+    
   }
   
   function gameOver(){
@@ -64,6 +68,15 @@ function getRandomNum(n) {
     
     finalScoreNum.innerText = score;
     finalScore.style.display = "block";
+
+    if(score > highestSoreKeeper){
+      
+      highestSoreKeeper = score;
+      highestScoreNum.innerText = score;
+    }
+
+    highestScore.style.display = "block";
+
     completeSound.play();
     bgm.pause();
     bgm.currentTime = 2;
