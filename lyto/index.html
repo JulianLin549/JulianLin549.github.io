@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html> 
+<head>
+      
+    <title>Color Game</title>
+    
+    <link rel="stylesheet" type="text/css" href="src/colorGame.css">
+       
+    
+</head>
+<body>
+    <h1>The Great Color Game</h1>
+    
+    <div id="overlay">
+        <div id="menu" >
+  
+          <img id="jsImg"  src="image/transImageBg.png" style="display: block"/>
+          <p id="finalScore" style="display: none">Your Score : <span id="finalScoreNum">0</span></p>
+          <p id="highestScore" style="display: none">Your Highest Score : <span id="highestScoreNum">0</span></p>
+          
+          <button id = "startBtn" class="button" >Start</button>
+          <button id = "tryAgainBtn" class="button" style="display: none" >Try Again</button>
+
+        </div>
+  
+    </div>
+
+    <div id="gameZone" style="display: none">
+
+        <p>Time Left: <span>00:00</span></p>
+        <p>score: <span id="scoreNum">0</span></p>
+
+        <div id="container">
+
+        </div>
+
+    </div>
+    
+    <script type="text/javascript" src="src/index.js"></script>
+</body>
+</html> 

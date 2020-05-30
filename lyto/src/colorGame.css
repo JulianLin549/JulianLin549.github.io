@@ -1,0 +1,157 @@
+body {
+    background-color: gray;
+}
+h1 {
+    color: white;
+    text-align: center;
+    background-color: steelblue;
+    margin: 0;
+    font-weight: normal;
+    text-transform: uppercase;
+    line-height: 1.1;
+    padding: 20px 0;
+}
+p {
+    color: white;
+    font-family:fantasy;
+    margin: 10px auto;
+    font-size: 40px;
+    text-align: center;
+}
+
+#jsImg {
+    position: fixed;
+    top: 180px;
+    margin: 0px auto;
+}
+
+.button {
+    padding: 15px 25px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    margin-top: 50px;
+    top:400px;
+}
+
+  
+.button:hover {background-color: #3e8e41}
+  
+.button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+#tryAgainBtn {
+    background-color: #ff63c1;
+}
+#tryAgainBtn:hover{background-color: #c74e97}
+
+#tryAgainBtn:active{
+    background-color: #c74e97;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+#overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: block; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+
+}
+
+
+#menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 100px auto;
+    width: 400px;
+    height: 600px;
+    background: #ccc1df;
+}
+
+#finalScore {
+    position: absolute;
+    top:310px;
+    margin: 0px auto;
+    font-family:fantasy;
+    font-size: 50px;
+    margin:0 auto;
+
+}
+#highestScore {
+    position: absolute;
+    top:410px;
+    margin: 0px auto;
+    font-family:fantasy;
+    font-size: 25px;
+    margin:0 auto;
+
+}
+
+#gameZone {
+    margin: 0 auto;
+    border: 1px solid red;
+    width: 400px;
+    height: 600px;
+}
+
+#container {
+    margin: 0 auto;
+    margin-top: 50px;
+    border: 1px solid black;
+    width: 400px;
+    height: 400px;
+    
+
+}
+
+
+.circle {
+    width: 30%;
+    background-color: purple;
+    float: left;
+    margin: 1.66%;
+    border-radius: 50%;
+    transition: background-color 0.6s;
+    -webkit-tramsition: background-color 0.6s;
+    -moz-tramsition: background-color 0.6s;
+    cursor: pointer;
+}
+.circle:hover{
+    box-shadow: 0 5px #555;
+}
+
+#theOne{
+    background-color: yellow;
+    width: 30%;
+    float: left;
+    margin: 1.66%;
+    border-radius: 50%;
+    transition: background-color 0.6s;
+    -webkit-tramsition: background-color 0.6s;
+    -moz-tramsition: background-color 0.6s;
+    filter: brightness(85%);
+
+}
+
+.theOneBrightness{
+    filter: brightness(85%);
+}
+
+
