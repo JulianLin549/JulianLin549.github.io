@@ -46,7 +46,6 @@ function initialize(){
     randomColor();
     setupCircle();
     let theOne = document.getElementById("theOne");
-    //theOne.style.backgroundColor = "red";
     theOne.addEventListener("click", function(){
         resetStage();
     });
@@ -65,12 +64,7 @@ function resetStage(){
     scoreNum.textContent = score;
     setupCircle();
     randomColor();
-    /* let theOne = document.getElementById("theOne");
-        //theOne.style.backgroundColor = "red";
-        theOne.addEventListener("click", function(){
-        resetStage();
-        }); */
-    
+
 }
 
 function setupCircle(){
@@ -103,8 +97,19 @@ function setupCircle(){
             
             if(i === row && j === col){
                 node.setAttribute("id", "theOne");
-                node.classList.add("theOneBrightness");
+                node.classList.add("basicDifficulty");
+                
+                //enhance Difficult
+                if(level > 4) {
+                    node.classList.remove("basicDifficulty")
+                    node.classList.remove("mediumDifficulty")
+                    node.classList.add("hardDifficulty");
 
+                }else if (level > 3) {
+                    node.classList.remove("basicDifficulty")
+                    node.classList.add("mediumDifficulty");
+                }   
+                
                 node.addEventListener("click", function(){
                     resetStage();
                 });
@@ -119,6 +124,8 @@ function setupCircle(){
         
     }
 }
+
+
 
 function setRandomNum(){
     let rand = Math.floor(Math.random()*level);
@@ -149,65 +156,3 @@ function setWidth(level){
 }
 
 
-
-/* function setupCircle(){
-    for(let i =0; i < numSqures; i++){
-        console.log("imerer");
-
-        var node = document.createElement("div");                 // Create a <div> node
-        node.style.backgroundColor = colors;
-        node.setAttribute("class", "square");
-        container.appendChild(node);                       
-
-
-        /* squares[i].style.backgroundColor = colors;
-        if(not the one)
-        squares[i].addEventListener("click", function(){
-        var clickedColor = this.style.backgroundColor;
-        }); else{
-            add another event listener */
- 
-/* 
-
-function changeColors(color){
-    for(let i =0; i < squares.length; i++){
-        squares[i].style.backgroundColor = color;
-}
-}
-function pickColor(){
-    var random = Math.floor(Math.random() * colors.length);
-    return colors[random];
-}
-function gernerateRandomColors(num){
-    var arr = [];
-    for (let i = 0; i<num; i++){
-        arr.push(randomColor());
-    }
-    return arr;
-}
-function randomColor(){
-    var r = Math.floor(Math.random() * 256);
-    var g = Math.floor(Math.random() * 256);
-    var b = Math.floor(Math.random() * 256);
-    return "rgb(" + r + ", " + g + ", " + b + ")";
-}
-
-function reset() {
-    colors = gernerateRandomColors(numSqures);
-    pickedColor = pickColor();
-    colorDisplay.textContent = pickedColor;
-    for(let i =0; i < squares.length; i++){
-        if(colors[i]){
-            squares[i].style.display = "block";
-            squares[i].style.backgroundColor = colors[i];
-        } else {
-            squares[i].style.display = "none";
-        }
-        
-    }
-    messageDisplay.textContent = "";
-    h1.style.backgroundColor = "steelblue";
-    resetButton.textContent = "New Colors";
-}
-
- */
