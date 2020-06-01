@@ -8,11 +8,12 @@ h1 {
     margin: 0;
     font-weight: normal;
     text-transform: uppercase;
+    font-family:fantasy;
     line-height: 1.1;
     padding: 20px 0;
 }
 p {
-    color: white;
+    color: black;
     font-family:fantasy;
     margin: 10px auto;
     font-size: 40px;
@@ -84,10 +85,18 @@ p {
     height: 600px;
     background: #ccc1df;
 }
+.punishment{
+    color: yellow;
+    background-color: red;
+    font-family:fantasy;
+    margin: 10px auto;
+    font-size: 40px;
+    text-align: center;
+}
 
 #finalScore {
     position: absolute;
-    top:310px;
+    top:230px;
     margin: 0px auto;
     font-family:fantasy;
     font-size: 50px;
@@ -96,17 +105,17 @@ p {
 }
 #highestScore {
     position: absolute;
-    top:410px;
+    top:300px;
     margin: 0px auto;
     font-family:fantasy;
-    font-size: 25px;
+    font-size: 30px;
     margin:0 auto;
 
 }
 
 #gameZone {
     margin: 0 auto;
-    border: 1px solid red;
+    background-color: #ccc1df;
     width: 400px;
     height: 600px;
 }
@@ -114,7 +123,6 @@ p {
 #container {
     margin: 0 auto;
     margin-top: 50px;
-    border: 1px solid black;
     width: 400px;
     height: 400px;
     
@@ -154,7 +162,52 @@ p {
 .mediumDifficulty{
     filter: brightness(80%);
 }
-.hardDifficulty{
+.hardDifficultyDarker{
     filter: brightness(90%);
 }
+.hardDifficultyBrighter{
+    filter: brightness(110%);
+}
 
+.zoomOut {
+    transition: transform 0.5s; /* Animation */
+    transform: scale(0); 
+}
+.zoomIn {
+    transition: transform 0.5s; /* Animation */
+    transform: scale(0); 
+}
+
+
+
+
+
+
+
+
+
+
+
+@keyframes shake {
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
+    }
+  
+    30%, 50%, 70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+  
+    40%, 60% {
+      transform: translate3d(4px, 0, 0);
+    }
+  }
+  
+#container.shake {
+    display: inline-block;
+    animation: shake 0.8s;
+}
+  

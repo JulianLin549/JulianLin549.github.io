@@ -9,15 +9,15 @@
     
 </head>
 <body>
-    <h1>The Great Color Game</h1>
+    <h1>The Lyto Color Game Clone</h1>
     
     <div id="overlay">
         <div id="menu" >
   
           <img id="jsImg"  src="image/transImageBg.png" style="display: block"/>
-          <p id="finalScore" style="display: none">Your Score : <span id="finalScoreNum">0</span></p>
-          <p id="highestScore" style="display: none">Your Highest Score : <span id="highestScoreNum">0</span></p>
-          
+          <p id="finalScore" style="display: none">Final score: <span id="finalScoreNum">0</span></p>
+          <p id="highestScore" style="display: none">Best score: <span id="highestScoreNum">0</span></p>
+
           <button id = "startBtn" class="button" >Start</button>
           <button id = "tryAgainBtn" class="button" style="display: none" >Try Again</button>
 
@@ -27,8 +27,9 @@
 
     <div id="gameZone" style="display: none">
 
-        <p>Time Left: <span>00:00</span></p>
-        <p>score: <span id="scoreNum">0</span></p>
+        <p>Time Left: <span id="timeLeft">00:00</span></p>
+        <p id="score">score: <span id="scoreNum">0</span></p>
+
 
         <div id="container">
 

@@ -6,26 +6,28 @@ let colorG = 0;
 let colorB = 0;
 let score = 0;
 let stage = 0;
-
+let timeCount = 0; 
+let highestScoreKeeper = 0;
 
 const square = document.querySelector(".square");
 const messageDisplay = document.querySelector("#message");
 const h1 = document.querySelector("h1");
 
 const overlay = document.getElementById("overlay");
-const menu = document.getElementById("menu");
+//const menu = document.getElementById("menu");
 const container = document.querySelector("#container");
 const gameZone = document.querySelector("#gameZone");
-const result = document.getElementById("result");
+
+const tryAgainBtn = document.getElementById("tryAgainBtn");
+const startBtn = document.getElementById("startBtn");
+
+const currentScore = document.getElementById("score");
+const scoreNum = document.getElementById("scoreNum");
 const finalScore = document.getElementById("finalScore");
 const finalScoreNum = document.getElementById("finalScoreNum");
 const highestScore = document.getElementById("highestScore");
 const highestScoreNum = document.getElementById("highestScoreNum");
-
-const tryAgainBtn = document.getElementById("tryAgainBtn");
-const startBtn = document.getElementById("startBtn");
-const scoreNum = document.getElementById("scoreNum");
-
+const timeLeft = document.getElementById("timeLeft");
 
 
 
@@ -35,20 +37,87 @@ window.onload = function() {
 }
 
 startBtn.addEventListener("click", function(){
-    initialize()
+    initialize();
+    timer = setInterval(checkStatus, 10);
 });
 
+tryAgainBtn.addEventListener("click", function(){
+    container.innerHTML = '';
+    score = 0;
+    level = 2;
+    stage = 0;
+    initialize();
+    timer = setInterval(checkStatus, 10);
+});
+
+function timeFormat(timeCount){
+    let sec = Math.floor(timeCount / 1000);
+    let mSec = (timeCount % 1000)/10;
+
+    if(sec <= 0 ){
+        sec = '00';
+    }else if(sec < 10 ){
+      sec = '0' + sec;
+    }
+
+    if(mSec < 10){
+        mSec = '0'+ mSec;
+    }
+    
+    console.log(sec + ' : ' + mSec);
+    return (sec + ' : ' + mSec);
+}
+
+function checkStatus(){
+    timeCount-=10;
+    timeLeft.innerText = timeFormat(timeCount);
+
+
+    //Gave Over
+    if (timeCount <= 0){
+        clearInterval(timer);
+        timer = null;
+        setTimeout('gameOver()', 500);
+    }
+}
+function gameOver(){
+    overlay.style.display = "block";
+    startBtn.style.display = "none";
+    tryAgainBtn.style.display = "block";
+    jsImg.style.display = "none";
+    finalScoreNum.innerText = score;
+    finalScore.style.display = "block";
+
+    if(score > highestScoreKeeper){
+      
+      highestSoreKeeper = score;
+      highestScoreNum.innerText = score;
+    }
+
+    highestScore.style.display = "block";
+/* 
+    completeSound.play();
+    bgm.pause();
+    bgm.currentTime = 2;  */
+}
 
 
 function initialize(){
     overlay.style.display = "none";
     gameZone.style.display = "block";
+    finalScore.style.display = "none";
+    highestScore.style.display = "none";
+    //15sec
+    timeCount = 15 * 1000;
+    scoreNum.textContent = score;
     randomColor();
     setupCircle();
     let theOne = document.getElementById("theOne");
     theOne.addEventListener("click", function(){
+        score-=1; //because resetState score ++ 2 times.
         resetStage();
-    });
+    }); 
+
 }
 
 
@@ -71,7 +140,7 @@ function setupCircle(){
     let row = setRandomNum();
     let col = setRandomNum();
     
-    for(let i =0; i < level; i++){
+    for(let i = 0; i < level; i++){
         var div = document.createElement("div");                 // Create a <div> node
         div.setAttribute("class", "div");
         container.appendChild(div);    
@@ -103,20 +172,40 @@ function setupCircle(){
                 if(level > 4) {
                     node.classList.remove("basicDifficulty")
                     node.classList.remove("mediumDifficulty")
-                    node.classList.add("hardDifficulty");
+                    
+                    if (!!setRandomDarker()) {node.classList.add("hardDifficultyDarker");}
+                    else {node.classList.add("hardDifficultyBrighter"); }
+                    
 
                 }else if (level > 3) {
                     node.classList.remove("basicDifficulty")
                     node.classList.add("mediumDifficulty");
                 }   
                 
-                node.addEventListener("click", function(){
+                 node.addEventListener("click", function(){
                     resetStage();
+
                 });
-            }
-            else{node.addEventListener("click", function(){
-                alert("not the one");
-            });
+            } 
+            else{
+                node.addEventListener('mousedown', () => {
+                    
+                    if(score > 0) {
+                        score-=1;
+                        scoreNum.textContent = score;
+                    }
+                    currentScore.classList.add("punishment");
+                });
+                node.addEventListener('mouseup', () => {
+                    currentScore.classList.remove("punishment");
+                });
+
+                /* node.addEventListener("click", function(){
+            
+                
+                
+                
+            }); */
             }
             
                        
@@ -130,6 +219,11 @@ function setupCircle(){
 function setRandomNum(){
     let rand = Math.floor(Math.random()*level);
     return rand;
+}
+function setRandomDarker(){
+    let rand = Math.floor(Math.random()*2);
+    if (!!rand) return true;
+    else return false;
 }
 
 function randomColor(){
@@ -154,5 +248,4 @@ function setWidth(level){
     
     return widthNum + '%';
 }
-
 
