@@ -79,7 +79,7 @@ window.onload = function() {
         }
     };
 
-    function navChange() {
+    /* function navChange() {
         var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0,
             windowWidth = document.documentElement.clientWidth, //check to see if user is mobile, disable navbar fadein
             aboutHeight = $(".about .section-title").offset().top - 85, //.about margin
@@ -120,7 +120,7 @@ window.onload = function() {
     };
 
     window.addEventListener('scroll', navChange, false); // will only fire if screen size is 991 px or larger(larger than possible mobile devices)
-
+ */
     //typing effect on hero message
     var typed = new Typed("#hero-message span", {
         strings: ["I'm a web developer.", "I'm a photographer", "I'm self-taught.", "I'm available for hire."],

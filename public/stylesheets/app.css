@@ -166,7 +166,7 @@ hr.title-hr {
     margin-top: -75px;
     border-radius: 0px;
     position: relative;
-    background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, .7)), url("public/images/ph.jpg");
+    background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, .7)), url("../../public/images/ph.jpg");
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
