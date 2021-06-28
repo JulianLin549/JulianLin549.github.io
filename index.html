@@ -19,7 +19,7 @@
 
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.12.0/devicon.min.css">
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600" rel="stylesheet">
 
@@ -31,7 +31,7 @@
 <body>
     <nav class="navbar sticky-top navbar-expand-md navbar-light">
         <a class="navbar-brand" href="#">
-            <div class="logo"><img src="public/images/logo120.png" alt="" width="40px"></div>
+            <div class="logo"><img src="public/images/logo120.png" alt="" width="30px"></div>
         </a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="menu-btn"></span>
@@ -45,7 +45,7 @@
                     <a class="nav-link" id="skills-nav" href="#skills">SKILLS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="portf-nav" href="#portfolio">PROJECTS</a>
+                    <a class="nav-link" id="portf-nav" href="#projects">PROJECTS</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" id="contact-nav" href="#contact">CONTACT</a>
@@ -82,29 +82,37 @@
         <hr class="title-hr">
         <p class="text-muted text-center"><i class="twicon-main-island" aria-hidden="true"></i> &nbspTaipei, Taiwan</p>
         <div class="container">
-            <h5 class="text-left">Professional</h5>
+            <h5 class="text-left">Introduction</h5>
             <hr class="title-hr">
             <p>
                 Hi, my name is <strong>Julian Lin</strong>.
                 I am a self-taught web developer living in Taipei, Taiwan <i class="twicon-main-island" aria-hidden="true"></i>
                 with a background in Mechanical Engineer and Electrical Engineer,
                 and have been learning web development, full-time, since Febuary 2020.
+            </p>
+            <p>
+                In October 2020, I have joined Opennet.ltd as a backend software engineer. During the time, I worked in two teams.
+                First, the System Stability and Performance Team, where I maintained distributed system’s stability and enhanced its performance.
+                I helped reduce 90% of the system error alert and improved inefficient SQLs by up to 500%.
+                The Second Team was to develop customer support web application for the customer service team.
+                I built 40+ visualized metrics, analytics, and summary tables for agent efficiency and performance statistics.
+                Also, I helped improve performance by 5 times by refactoring inefficient analytic SQLs.
+            </p>
+            <p>
+                I enjoy learning and building web applications with latest tech stack and techniques.
+                Currently, I am building a Ramen review website which let ramen lovers share their experiences for stores in Taiwan.
+            </p>
+            <p>
+                I am an incoming student in University of Illinois Champaign-Urbana studying Electrical and Computer Engineering,
+                Actively looking for summer intern in the US.
+            </p>
 
-            </p>
-            <p>
-                I enjoy building backend web server and responsive web apps with Javascript using the latest UI frameworks and techniques.
-                I like to learn new stuff and love to keep myself busy. I am constantly learning and developing trying to use my knowledge a better place.
-            </p>
-            <p>
-                Currently, I am building a Ramen Group which let ramen lovers in Taiwan share their experiences of all the ramen store around them with others.
-                After I finish this project, I will carry on with a forum focused on Taiwanese students living in the US.
-                The forum will mainly target Taiwanese young students who are currently seeking for jobs in the US.
-            </p>
+            <hr>
 
             <div class="more-info text-center">
                 <h5 class="text-left">Want to learn more about me?</h5>
                 <hr class="title-hr">
-                <p class="text-left">Click <a href="public/files/reseme.pdf" style="font-size: 1.5rem; ">here</a> for a pdf of my most current reseme.</p>
+                <p class="text-left">Click <a href="public/files/reseme.pdf" style="font-size: 1.5rem; ">here</a> for a pdf of my most current Reseme.</p>
                 <p>
                     Or click the button below for my social account links!
                 </p>
@@ -113,7 +121,6 @@
                     <a href="https://github.com/JulianLin549"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
                     <a href="public/files/reseme.pdf" title="Reseme"><i class="fa fa-file-text" aria-hidden="true"></i></a>
                     <a href="https://www.facebook.com/julian.lin.549" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></i></a>
-
                 </div>
             </div>
 
@@ -123,20 +130,23 @@
     <section class="skills" id="skills">
         <h1 class="skill-title">SKILLS</h1>
         <hr class="title-hr">
-        <p class="text-muted text-center">Languages, Frameworks, & Libraries</p>
+        <p class="text-muted text-center">Languages, Frameworks, & Tools and more</p>
         <div class="skill-logos container">
 
             <div class="row">
 
                 <div class="col-sm-12 col-md-4 dev">
+                    <h3>Language</h3>
+                    <hr>
+                    <div class="type">
+                        JavaScript, JAVA, Python, C++
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-4 dev">
                     <h3>FRONT END</h3>
                     <hr>
                     <div class="type">
-                        <i class="skill devicon-html5-plain-wordmark colored"></i>
-                        <i class="skill devicon-css3-plain-wordmark colored"></i>
-                        <i class="skill devicon-bootstrap-plain-wordmark colored"></i>
-                        <i class="skill devicon-javascript-plain colored"></i>
-
+                        ReactJs, ContextAPI, NextJs, HTML5, CSS, TypeScript, Bootstrap, MaterialUI, jQuery
                     </div>
                 </div>
 
@@ -144,52 +154,46 @@
                     <h3>BACK END</h3>
                     <hr>
                     <div class="type">
-                        <i class="skill devicon-nodejs-plain-wordmark colored"></i>
-                        <i class="skill devicon-express-original-wordmark"></i>
-                        <i class="skill devicon-mongodb-plain-wordmark colored"></i>
-                        <i class="skill devicon-heroku-original colored"></i>
+                        REST-ful APIs, Spring MVC, Spring Boot, Spring Security, myBatis, Spring Data JPA,
+                        Hibernate, Spring Cloud, Mockito, Assertj, JUnit, Node.js, ExpressJS, PassportJS,
+                        Puppeteer, Swagger, web-scraping, data-parsing, cookies
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-4 dev">
+                    <h3>Database</h3>
+                    <hr>
+                    <div class="type">
+                        MySQL, MongoDB, Redis, Postgresql, FireBase
                     </div>
                 </div>
 
                 <div class="col-sm-12 col-md-4 dev">
-                    <h3>TOOLS</h3>
+                    <h3>DevOps</h3>
                     <hr>
                     <div class="type">
-                        <i class="skill devicon-babel-plain colored"></i>
-                        <i class="skill devicon-git-plain-wordmark colored"></i>
-                        <i class="skill devicon-github-plain-wordmark"></i>
-                        <i class="skill devicon-jquery-plain-wordmark colored"></i>
+                        Docker, Kubernetes, Rancher,
+                        CircleCi, DroneCI, Github Actions, Dokku, Grafana, Prometheus, Loki, VPS(Vultr),
+                        Netlify, DNS, SSL(Let’s Encrypt),
+                        AWS(RDS/ElasticCache/CodeCommit/
+                        CodeBuild/ECR/S3)
                     </div>
                 </div>
+
                 <div class="col-sm-12 col-md-4 dev">
-                    <h3>DESIGN TOOLS</h3>
+                    <h3>Others</h3>
                     <hr>
                     <div class="type">
-                        <i class="skill devicon-illustrator-plain colored"></i>
-                        <i class="skill devicon-photoshop-plain colored"></i>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-4 dev learning">
-                    <h3>LEARNING</h3>
-                    <hr>
-                    <p class="text-muted small text-center">
-                        I'm always learning new things.<br>
-                        Here's what I'm focusing on now:
-                    </p>
-                    <div class="type">
-                        <i class="skill devicon-react-original-wordmark colored"></i>
-                        <i class="skill devicon-nginx-original colored"></i>
-                        <i class="skill devicon-amazonwebservices-plain-wordmark colored"></i>
-                        <i class="skill devicon-docker-plain-wordmark"></i>
+                        Postman, TDD, Regex, Server send event, WebSocket, OOP
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="portfolio" id="portfolio">
+    <section class="projects" id="projects">
         <h1 class="portf-title">Projects</h1>
         <hr class="title-hr">
+        <p class="text-muted text-center">What I have done.</p>
         <div class="container">
             <div class="row">
                 <!-- Ramen Group -->
@@ -197,21 +201,25 @@
                     <div class="card-container manual-flip">
                         <div class="card">
                             <div class="card-front">
-                                <img class="card-img-top b-lazy" src="public/images/ph.jpg" data-src="https://i.imgur.com/r3dsNOX.png" alt="Card image cap">
+                                <img class="card-img-top b-lazy" src="public/images/ph.jpg" data-src="https://i.imgur.com/w8WuHuf.png" alt="Card image cap">
                                 <div class="card-body">
                                     <h3 class="card-title">Ramen Group</h3>
                                     <hr>
-                                    <span class="tag">EJS</span>
-                                    <span class="tag">Bootstrap</span>
+                                    <span class="tag">NextJs</span>
                                     <span class="tag">Node.js</span>
                                     <span class="tag">Express</span>
                                     <span class="tag">MongoDB</span>
-                                    <span class="tag">Mongoose</span>
-                                    <span class="tag">Javascript</span>
                                     <span class="tag">Puppeteer</span>
-                                    <span class="tag">RESTful routing</span>
-                                    <span class="tag">NodeMailer</span>
                                     <span class="tag">JWT</span>
+                                    <span class="tag">CircleCI</span>
+                                    <span class="tag">Docker</span>
+                                    <span class="tag">GeoHash</span>
+                                    <span class="tag">Uber H3</span>
+                                    <span class="tag">MaterialUI</span>
+                                    <span class="tag">Javascript</span>
+                                    <span class="tag">Facebook oauth</span>
+                                    <span class="tag">RESTful api</span>
+                                    <span class="tag">NodeMailer</span>
 
                                 </div>
                                 <div class="card-footer">
@@ -219,7 +227,7 @@
                                         <i class="fa fa-github" aria-hidden="true"></i>
                                     </a>
                                     <button class="btn btn-sm btn-primary card-flip" title="See description about the project">About</button>
-                                    <a href="https://ramen-group.herokuapp.com/" rel="noopener noreferrer" class="btn btn-sm btn-primary" title="See Demo">
+                                    <a href="https://taiwanramen.club" rel="noopener noreferrer" class="btn btn-sm btn-primary" title="See Demo">
                                         <i class="fa fa-laptop" aria-hidden="true"></i>
                                         <span style="font-size:0.8rem;">See Demo</span>
                                     </a>
@@ -232,13 +240,13 @@
                                     <h4 class="card-title">About this project</h4>
                                     <hr>
                                     <p class="proj-info">
-                                        Ramen Group Web Application is a full-stack RESTful Node and Express app made for helping users to find their favorite ramen stores around them.
-                                        Features include the ability to view all ramen stores scraped from google map, create an account, edit your profile,
-                                        add a new favorite store you find around you, leave comments, and rate stores. Also, user can find nearest ramen stores in their city
-                                        or find the best rating ramen store around them.
+                                        Ramen club web application is a full-stack React and Node.js app made for helping users to find their favorite ramen stores around them.
+                                        Features include the ability to view all ramen stores crawled from google map, create an account, edit your profile,
+                                        add a new favorite store you find around you, leave comments, and rate stores. Also, the website allow users to find nearest ramen stores
+                                        in their city implementing geohash and Uber h3 geo-spacial indexing.
                                     </p>
-                                    <p><a href="https://github.com/JulianLin549/Raman_group" rel="noopener noreferrer">View Github Repository</a></p>
-                                    <p><a href="https://ramen-group.herokuapp.com/" rel="noopener noreferrer">See Live Demo</a></p>
+                                    <p><a href="https://github.com/TaiwanRamen" rel="noopener noreferrer">View Github Repository</a></p>
+                                    <p><a href="https://taiwanramen.club/" rel="noopener noreferrer">See Live Demo</a></p>
                                 </div>
                                 <div class="card-footer text-left">
                                     <button class="btn btn-sm btn-primary card-flip">Back</button>
@@ -248,57 +256,6 @@
                     </div>
                 </div>
 
-                <!-- yelpcamp -->
-                <div class="col-md-6">
-                    <div class="card-container manual-flip">
-                        <div class="card">
-                            <div class="card-front">
-                                <img class="card-img-top b-lazy" src="public/images/ph.jpg" data-src="https://i.imgur.com/m3Ivcim.png" alt="Card image cap">
-                                <div class="card-body">
-                                    <h3 class="card-title">YelpCamp</h3>
-                                    <hr>
-                                    <span class="tag">EJS</span>
-                                    <span class="tag">Bootstrap</span>
-                                    <span class="tag">Javascript</span>
-                                    <span class="tag">JQuery</span>
-                                    <span class="tag">Node.js</span>
-                                    <span class="tag">Express</span>
-                                    <span class="tag">MongoDB</span>
-                                    <span class="tag">Mongoose</span>
-                                    <span class="tag">RESTful routing</span>
-                                    <span class="tag">NodeMailer</span>
-                                    <span class="tag">JWT</span>
-                                </div>
-                                <div class="card-footer">
-                                    <a href="https://github.com/JulianLin549/yelpCamp" rel="noopener noreferrer" class="btn btn-sm btn-primary" title="See on GitHub">
-                                        <i class="fa fa-github" aria-hidden="true"></i>
-                                    </a>
-                                    <button class="btn btn-sm btn-primary card-flip" title="See description about the project">About</button>
-                                    <a href="https://yelp-camp-julian.herokuapp.com/" rel="noopener noreferrer" class="btn btn-sm btn-primary" title="See Demo">
-                                        <i class="fa fa-laptop" aria-hidden="true"></i>
-                                        <span style="font-size:0.8rem;">See Demo</span>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="card-back">
-                                <div class="card-body">
-                                    <h4 class="card-title">About this project</h4>
-                                    <hr>
-                                    <p class="proj-info">
-                                        YelpCamp is a fullstack web from the Udemy course - The Web Developer Bootcamp by Colt Steele. A campground
-                                        website allowing users to view campgrounds then register and submit their own or discuss with other users.
-                                        Features include the ability to view all user submitted campgrounds, create an account, edit your profile, add your own campground, leave comments, and rate campgrounds.
-                                    </p>
-                                    <p><a href="https://github.com/JulianLin549/yelpCamp" rel="noopener noreferrer">View Github Repository</a></p>
-                                    <p><a href="https://yelp-camp-julian.herokuapp.com/" rel="noopener noreferrer">See Live Demo</a></p>
-                                </div>
-                                <div class="card-footer text-left">
-                                    <button class="btn btn-sm btn-primary card-flip">Back</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="col-md-6">
                     <div class="card-container manual-flip">
                         <div class="card">
@@ -327,9 +284,9 @@
                                     <hr>
                                     <p class="proj-info">
                                         HowHow Parser is a backend node app which generate spoken sentence using parsed YouTube video from famous YouTuber HowHow.
-                                        The vedio contains all the chinese character pronounciation and I excract all the time-pronounciation relationship and
+                                        The video contains all the chinese character pronunciation and I extract all the time-pronunciation relationship and
                                         write a parser accordingly.
-                                        The app features typing a sentance in the form and the app cuts the video and mergers the sentence pronounced by the youtuber for you.
+                                        The app features typing a sentence in the form and the app cuts the video and mergers the sentence pronounced by the youtuber for you.
                                     </p>
                                     <p><a href="https://github.com/JulianLin549/HowHowConverter" rel="noopener noreferrer">View Github Repository</a></p>
 
@@ -376,7 +333,7 @@
                         @<strong> EMAIL</strong>
                         <br>
 
-                        <p><a href="sres3416@gmail.com">sres3416@gmail.com</a></p>
+                        <p><a href="imjulianlin@gmail.com">imjulianlin@gmail.com</a></p>
                     </p>
                     <hr>
                     <p>
@@ -387,7 +344,7 @@
                             </a>
 
                             <a href="https://github.com/JulianLin549" rel="noopener noreferrer">
-                                <i class="fa fa-github-alt" aria-hidden="true"></i>
+                                <i class="fa fa-github" aria-hidden="true"></i>
                             </a>
 
                             <a href="https://www.facebook.com/julian.lin.549" title="Facebook">
@@ -405,7 +362,7 @@
     <footer class="text-center">
         <h3>Julian Lin Studio</h3>
         <p class="col mt-2 text-center">Template from <a href="https://github.com/OtariKobiashvili/portfolio">OtariKobiashvili</a></p>
-        <p class="col mt-2 text-center"><small>© 2020. All Rights Reserved.</small></p>
+        <p class="col mt-2 text-center"><small>© 2021. All Rights Reserved.</small></p>
 
 
     </footer>

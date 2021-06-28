@@ -123,7 +123,7 @@ window.onload = function() {
  */
     //typing effect on hero message
     var typed = new Typed("#hero-message span", {
-        strings: ["I'm a web developer.", "I'm a photographer", "I'm self-taught.", "I'm available for hire."],
+        strings: ["I'm looking for 2022 summer intern.", "I'm a web developer.", "I'm a backend engineer."],
         typeSpeed: 90,
         backSpeed: 50,
         backDelay: 3000,
@@ -152,9 +152,9 @@ window.onload = function() {
             pos;
 
         if (navVal === "about") {
-            pos = navDiv.offset().top - 65;
+            pos = navDiv.offset().top - 105;
         } else {
-            pos = navDiv.offset().top - 35;
+            pos = navDiv.offset().top - 80;
         }
 
         $('html, body').animate({ scrollTop: pos }, 1500);

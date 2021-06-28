@@ -33,6 +33,7 @@ hr.title-hr {
 }
 
 .navbar {
+    background-color: #7E7E7E;
     transition: .3s all ease-in-out;
     -webkit-transition: 0.3s all ease-in-out;
     -moz-transition: 0.3s all ease-in-out;
@@ -101,20 +102,6 @@ hr.title-hr {
     right: .5px;
 }
 
-.logo:hover {
-    animation: rotation .3s infinite linear;
-}
-
-@keyframes rotation {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(359deg);
-    }
-
-}
 
 
 /* //////////Nav-toggler-animation///////////// */
@@ -424,7 +411,7 @@ hr.title-hr {
 }
 
 .skill {
-    font-size: 3.2em;
+    font-size: 1.5em;
     position: relative;
     margin: 0px 10px;
 }
@@ -437,20 +424,6 @@ hr.title-hr {
     color: rgb(130, 182, 200);
 }
 
-.skill-logos {
-    line-height: 55px;
-}
-
-.skill-logos i {
-    filter: grayscale(100%);
-    transition: .3s ease-in-out;
-    -webkit-filter: grayscale(100%);
-    -webkit-transition: .3s ease-in-out;
-    -moz-filter: grayscale(100%);
-    -moz-transition: .3s ease-in-out;
-    -o-filter: grayscale(100%);
-    -o-transition: .3s ease-in-out;
-}
 
 .skill-logos i:hover {
     filter: grayscale(0%);
@@ -477,6 +450,8 @@ hr.title-hr {
     max-width: 320px;
     margin: 0 auto;
     margin-bottom: 10px;
+    text-align: justify;
+
 }
 
 .dev {
@@ -493,7 +468,7 @@ hr.title-hr {
 }
 
 .skills p {
-    margin-bottom: 50px;
+    margin-bottom: 10px;
 }
 
 .dev hr {
@@ -511,7 +486,7 @@ hr.title-hr {
 }
 
 /*////////////////////////////PORTFOLIO///////////////*/
-.portfolio {
+.projects {
     text-align: center;
     padding: 5px 0;
 }
